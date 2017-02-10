@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../views/partials/head %>
+</head>
+<body class="container">
+
+    <header>
+        <% include ../views/partials/header %>
+    </header>
+
+    <main>
+       
+    
+<div class="jumbotron">
+<ul>
+ <% users.forEach(function(user){ %>
+   <li> <%=greet %> <%= user.name %> </li>
+  <% }); %>
+</ul>
+</div>
+
+</main>
+
+    <footer>
+        <% include ../views/partials/footer %>
+    </footer>
+    
+</body>
+</html>
