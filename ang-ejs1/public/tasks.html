@@ -1,0 +1,105 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="uigridApp">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>MeanStack - Tasks List</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<!--<link rel="stylesheet" type="text/css" href="ng-grid.min.css" /> -->
+
+
+
+	<style>
+		html 	
+						{ overflow-y:scroll; }
+		body 					{ padding-top:50px; }
+		#todo-list 				{ margin-bottom:30px; }
+		#todo-form 	 			{ margin-bottom:50px; }
+		
+		.myGrid {
+				    width: 500px;
+				    height: 250px;
+				  }
+
+
+	</style>
+         
+
+	<!-- Scripts 
+		<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css">-->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ui-grid.info/release/ui-grid.js"></script>
+<link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+<style type="text/css">
+.myGrid {
+width: 500px;
+height: 200px;
+}
+</style>
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS WITH INITIALIZE FUNCTION -->
+<body>
+
+	<div class="container"  ng-controller="uigridCtrl">
+
+		<!-- HEADER AND TODO COUNT -->
+		<div class="container text-center">
+			<h1>Welcome To Tasks list </h1> 
+
+		</div>
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
+                Tasks List
+            </a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Tasks</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+      
+    </div>
+</nav>
+			<div align="right" >
+			<h3><a href="#newtaskpanel" ng-model="shownewtask" ng-click="shownewtaskfn()"> Enter new Task</a></h3>
+			</div>
+			
+
+			<br><br>
+
+
+			<div id="newtaskpanel" ng-show="newtaskpanel" class="panel panel-default">
+  					<div class="panel-heading">Add newTask</div>
+  					<div class="panel-body">
+  						<label>Name</label><input type="text" name="name" ng-model="name"/> 
+  						<label>Descr</label><input type="text" name="descr" ng-model="descr"/>
+  						<button id="newTaskfn" name="newtaskfn" ng-click="addtaskfn(name,descr)">AddTask</button>  
+  					</div>
+			</div>
+
+			<br>
+
+			<!--Angular grid view-->
+			<div class="container">				 
+				<div ui-grid="gridOptions" ui-grid-paginationclass="myGrid"></div>
+			</div>
+			
+		
+	</div>
+
+    <script type="text/javascript" src="core.js"></script>
+</body>
+</html>

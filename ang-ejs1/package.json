@@ -1,0 +1,24 @@
+{
+  "name": "ang-ejs1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.1",
+    "body-parser": "^1.16.0",
+    "ejs": "^2.5.5",
+    "express": "^4.14.1",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.8.1",
+    "morgan": "^1.8.0",
+    "path.join": "^1.0.0",
+    "require.js": "^1.0.0",
+    "webpack": "^2.2.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
